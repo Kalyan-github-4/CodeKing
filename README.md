@@ -1,4 +1,4 @@
- ![project banner](https://github.com/Web-Bikash-Agency/TechTribe-Portfolio/blob/main/Screenshot%202025-10-10%20210308.png?raw=true)
+ ![project banner](https://github.com/Kalyan-github-4/CodeBox/blob/main/Screenshot%202025-11-29%20005809.png?raw=true)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
