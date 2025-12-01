@@ -63,7 +63,7 @@ const Header = () => {
   const { user } = useUser();
 
   return (
-    <div className='fixed z-50 max-w-7xl p-4 flex justify-between items-center w-full backdrop-blur-xs'>
+    <div className='fixed z-50 max-w-7xl p-4 flex justify-between items-center w-full'>
       <div className='flex gap-4 items-center'>
 
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
@@ -115,7 +115,9 @@ const Header = () => {
           <Button className="font-game text-2xl" variant="pixel">Sign In</Button>
         </Link>
         : <div className="flex gap-4 items-center">
-          <Button className="font-game text-2xl" variant="pixel">Dashboard</Button>
+          <Link href={"/dashboard"}>
+            <Button className="font-game text-2xl" variant="pixel">Dashboard</Button>
+          </Link>
           <UserButton appearance={{ elements: { userButtonTrigger: "outline-none" } }} />
         </div>}
     </div>
