@@ -11,12 +11,12 @@ const Hero = () => {
       className='absolute w-full h-full inset-0 object-cover'/>
 
       <div className='absolute w-full flex flex-col items-center mt-44'>
-        <h1 className='font-bold text-7xl font-game'>Start Your</h1>
-        <h1 className='font-bold text-8xl font-game text-yellow-400'
+        <h1 className='font-bold text-7xl font-game tracking-wider'>Start Your</h1>
+        <h1 className='font-bold text-8xl font-game text-yellow-400 tracking-wider'
         style={{textShadow: "2px 2px 0 #000, -2px -2px 0 #000, -2px 2px 0 #000,2px -2px 0 #000 "}}
         >Coding Journey</h1>
 
-        <h2 className='mt-5 font-game text-3xl'>Beginner friendly coding courses & projects</h2>
+        <h2 className='mt-5 font-game text-3xl tracking-wider'>Beginner friendly coding courses & projects</h2>
         
         <Link href={'/sign-in'}>
         <Button variant="pixel" className='mt-7 text-3xl font-game p-6'>GET STARTED</Button></Link>
