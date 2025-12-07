@@ -1,5 +1,5 @@
 import { db } from "@/config/db";
-import { courseTable } from "@/config/schema";
+import { courseChaptersTable, courseTable } from "@/config/schema";
 import { eq, asc } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -24,6 +24,11 @@ export async function GET(req: NextRequest) {
         .where(eq(courseTable.courseId, courseId))
         .limit(1);
 
+      const chapterResult = await db
+        .select()
+        .from(courseChaptersTable)
+        .where(eq(courseChaptersTable.courseId, courseId));
+
       if (result.length === 0) {
         return NextResponse.json(
           { message: "Course not found" },
@@ -31,7 +36,12 @@ export async function GET(req: NextRequest) {
         );
       }
 
-      return NextResponse.json(result[0]);
+      return NextResponse.json(
+        {
+          ...result[0],
+          chapters: chapterResult
+        }
+      );
     }
 
     const result = await db
