@@ -25,6 +25,6 @@ export const courseChaptersTable = pgTable("courseChapters", {
   courseId: integer().notNull(),
   name: varchar({ length: 255 }).notNull(),
   description: varchar({ length: 500 }).notNull(),
-  exersices: json(),
+  exercises: json(),
   chapterId: integer().notNull()
 })
