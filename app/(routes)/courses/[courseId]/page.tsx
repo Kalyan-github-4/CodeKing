@@ -5,6 +5,10 @@ import CourseDetailsBanner from "./_components/CourseDetailsBanner";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Course } from "../_components/CourseList";
+import CourseChapters from "./_components/CourseChapters";
+import CourseStatus from "./_components/CourseStatus";
+import UpgradeToPro from "../../dashboard/_components/UpgradeToPro";
+import CommunityHelpSection from "./_components/CommunityHelpSection";
 
 const CourseDetail = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -33,6 +37,19 @@ const CourseDetail = () => {
   return (
     <div>
       <CourseDetailsBanner loading={loading} courseDetail={courseDetail} />
+      
+        {/* Additional course details can be rendered here */}
+      <div className="grid grid-cols-3 p-10 md:px-24 lg:px-36 gap-5">
+        <div className="col-span-2">
+        
+        <CourseChapters loading={loading} courseDetail={courseDetail} />
+        </div>
+        <div>
+          <CourseStatus courseDetail={courseDetail} />
+          <UpgradeToPro />
+          <CommunityHelpSection />
+        </div>
+      </div>
     </div>
   );
 };
