@@ -6,55 +6,106 @@ import { db } from "@/config/db";
 const DATA = [
   {
     id: 1,
-    name: "Introduction to HTML",
-    description: "Learn what HTML is, how it works, and understand the basic structure of a webpage.",
+    name: "Introduction to CSS",
+    description: "Learn what CSS is, how it works, and how to apply styles to HTML elements.",
     exercises: [
-      { name: "Create a basic HTML file", xp: 20, difficulty: "Easy" },
-      { name: "Add a title inside <head>", xp: 25, difficulty: "Easy" },
-      { name: "Explore the structure of <html>, <head>, <body>", xp: 25, difficulty: "Easy" }
+      { name: "Add CSS using inline styles", xp: 20, difficulty: "Easy" },
+      { name: "Use internal CSS with <style>", xp: 25, difficulty: "Easy" },
+      { name: "Link an external CSS file", xp: 25, difficulty: "Easy" }
     ]
   },
   {
     id: 2,
-    name: "Text & Formatting",
-    description: "Learn headings, paragraphs, bold, italic, underline, and semantic text tags.",
+    name: "CSS Selectors",
+    description: "Understand how to target HTML elements using different CSS selectors.",
     exercises: [
-      { name: "Create a heading structure (H1–H6)", xp: 25, difficulty: "Easy" },
-      { name: "Format text using <b>, <i>, <u>", xp: 20, difficulty: "Easy" },
-      { name: "Use semantic tags like <strong> & <em>", xp: 30, difficulty: "Medium" }
+      { name: "Use element and class selectors", xp: 25, difficulty: "Easy" },
+      { name: "Apply ID and group selectors", xp: 30, difficulty: "Easy" },
+      { name: "Style elements using descendant selectors", xp: 35, difficulty: "Medium" }
     ]
   },
   {
     id: 3,
-    name: "Links & Images",
-    description: "Insert hyperlinks, image elements, and understand attributes like href, src, alt, and target.",
+    name: "Colors & Typography",
+    description: "Style text using colors, fonts, spacing, and typography properties.",
     exercises: [
-      { name: "Add images and hyperlinks", xp: 30, difficulty: "Medium" },
-      { name: "Create an image gallery using <img>", xp: 35, difficulty: "Medium" },
-      { name: "Build a navigation menu using <a> links", xp: 40, difficulty: "Medium" }
+      { name: "Apply colors using HEX, RGB, and named colors", xp: 25, difficulty: "Easy" },
+      { name: "Style text using font properties", xp: 30, difficulty: "Medium" },
+      { name: "Create a typography-based content page", xp: 40, difficulty: "Medium" }
     ]
   },
   {
     id: 4,
-    name: "Lists",
-    description: "Use ordered lists, unordered lists, and nested lists to structure content.",
+    name: "Box Model",
+    description: "Learn how margin, padding, border, and content define element layout.",
     exercises: [
-      { name: "Create ordered and unordered lists", xp: 25, difficulty: "Easy" },
-      { name: "Make a nested shopping list", xp: 30, difficulty: "Medium" },
-      { name: "Convert text into a bullet list", xp: 20, difficulty: "Easy" }
+      { name: "Apply margin and padding", xp: 25, difficulty: "Easy" },
+      { name: "Style borders and outlines", xp: 30, difficulty: "Easy" },
+      { name: "Build a card layout using box model", xp: 40, difficulty: "Medium" }
     ]
   },
   {
     id: 5,
-    name: "HTML Forms",
-    description: "Learn how to collect user input using form elements such as input, textarea, select, and button.",
+    name: "CSS Layout Basics",
+    description: "Understand how elements are positioned and aligned on a webpage.",
     exercises: [
-      { name: "Build a basic form with inputs", xp: 40, difficulty: "Medium" },
-      { name: "Create a login form", xp: 45, difficulty: "Medium" },
-      { name: "Make a multi-question survey form", xp: 50, difficulty: "Hard" }
+      { name: "Use display and visibility properties", xp: 30, difficulty: "Medium" },
+      { name: "Position elements using relative and absolute", xp: 40, difficulty: "Medium" },
+      { name: "Create a simple page layout", xp: 45, difficulty: "Hard" }
+    ]
+  },
+  {
+    id: 6,
+    name: "Flexbox",
+    description: "Build flexible and responsive layouts using CSS Flexbox.",
+    exercises: [
+      { name: "Create a flex container", xp: 30, difficulty: "Easy" },
+      { name: "Align items using justify-content and align-items", xp: 40, difficulty: "Medium" },
+      { name: "Build a responsive navbar using Flexbox", xp: 50, difficulty: "Hard" }
+    ]
+  },
+  {
+    id: 7,
+    name: "CSS Grid",
+    description: "Design complex, two-dimensional layouts using CSS Grid.",
+    exercises: [
+      { name: "Create a basic grid layout", xp: 35, difficulty: "Medium" },
+      { name: "Use grid-template areas", xp: 45, difficulty: "Medium" },
+      { name: "Build a dashboard layout using Grid", xp: 55, difficulty: "Hard" }
+    ]
+  },
+  {
+    id: 8,
+    name: "Responsive Design",
+    description: "Make websites adaptable to different screen sizes using responsive techniques.",
+    exercises: [
+      { name: "Use media queries", xp: 35, difficulty: "Medium" },
+      { name: "Build a mobile-first layout", xp: 45, difficulty: "Medium" },
+      { name: "Optimize a page for desktop, tablet, and mobile", xp: 55, difficulty: "Hard" }
+    ]
+  },
+  {
+    id: 9,
+    name: "Transitions & Animations",
+    description: "Add motion and interactivity using CSS transitions, transforms, and animations.",
+    exercises: [
+      { name: "Create hover transitions", xp: 30, difficulty: "Easy" },
+      { name: "Apply transforms (scale, rotate, translate)", xp: 40, difficulty: "Medium" },
+      { name: "Build a CSS loading animation", xp: 55, difficulty: "Hard" }
+    ]
+  },
+  {
+    id: 10,
+    name: "CSS Variables & Best Practices",
+    description: "Write clean, maintainable, and scalable CSS using modern techniques.",
+    exercises: [
+      { name: "Use CSS custom properties (variables)", xp: 35, difficulty: "Medium" },
+      { name: "Refactor styles using reusable classes", xp: 45, difficulty: "Medium" },
+      { name: "Style a complete webpage with clean CSS", xp: 60, difficulty: "Hard" }
     ]
   }
 ];
+
 
 
 
@@ -65,10 +116,10 @@ export async function GET(req: NextRequest) {
       name: item.name,
       description: item.description,
       exercises: (item.exercises),
-      chapterId: item.id,           
-      courseId: 1,             
+      chapterId: item.id,
+      courseId: 2,
     }));
-   
+
     await db.insert(courseChaptersTable).values(rows);
 
     return NextResponse.json({ message: "HTML chapters inserted for courseId 1" });
