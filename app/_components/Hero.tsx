@@ -90,7 +90,7 @@ const Hero = () => {
         
         <div className='relative mt-8 group'>
           <div className='absolute bg-linear-to-r from-yellow-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-300' />
-          <Link href={'/sign-in'}>
+          <Link href={'/dashboard'}>
             <Button 
               variant="pixel" 
               className='relative text-3xl font-game p-6'

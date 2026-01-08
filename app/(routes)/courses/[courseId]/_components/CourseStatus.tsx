@@ -28,15 +28,15 @@ const CourseStatus = ({ courseDetail }: Props) => {
     }
   }, [courseDetail])
 
-  const exerciseProgress = 5 // Example value
-  const xpProgress = 50 // Example value
+  const exerciseProgress = 5
+  const xpProgress = 50
   const exercisePercentage = counts.totalExc > 0 ? Math.round((exerciseProgress / counts.totalExc) * 100) : 0
   const xpPercentage = counts.totalXP > 0 ? Math.round((xpProgress / counts.totalXP) * 100) : 0
 
   return (
     <div className=' border-2 border-yellow-500/60 hover:border-yellow-500/80 duration-300 rounded-xl p-6 w-full bg-linear-to-br from-slate-900/80 to-slate-900  font-game '>
       <div className='flex items-center justify-between mb-6'>
-        <h2 className='text-4xl tracking-wide text-yellow-300'>Progress Dashboard</h2>
+        <h2 className='text-4xl tracking-wide bg-linear-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent'>Progress Dashboard</h2>
         <div className='flex items-center gap-2 text-sm text-yellow-400'>
           <Zap className='w-4 h-4' />
           <span>LIVE TRACKING</span>

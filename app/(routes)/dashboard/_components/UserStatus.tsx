@@ -74,7 +74,7 @@ const UserStatus = () => {
                             />
                         </div>
                         <div>
-                            <h2 className="text-3xl font-game bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">20</h2>
+                            <h2 className="text-3xl font-game bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">8</h2>
                             <h2 className="text-sm font-game text-gray-400 uppercase tracking-wider">Daily Streak</h2>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ const UserStatus = () => {
 
 
                 {/* XP Points - Added new stat */}
-                <div className="p-4 rounded-lg bg-slate-800/50 border border-green-900/30 hover:border-green-500/40 transition-all duration-300 group/item">
+                <div className="p-4 rounded-lg bg-slate-800/50 border border-red-900/30 hover:border-red-500/40 transition-all duration-300 group/item">
                     <div className="flex items-center gap-3">
                         <div className="relative">
                             <div className="absolute inset-0 bg-red-500/20 blur-sm rounded-full"></div>
@@ -103,7 +103,7 @@ const UserStatus = () => {
                         </div>
                     </div>
                     <div className="mt-2 h-1 bg-slate-700 rounded-full overflow-hidden">
-                        <div className="h-full bg-linear-to-r from-red-500 to-red-500 w-1/3 rounded-full"></div>
+                        <div className="h-full bg-linear-to-r from-red-400 to-red-500 w-2/3 rounded-full"></div>
                     </div>
                 </div>
                 
@@ -143,7 +143,7 @@ const UserStatus = () => {
                     </div>
                 </div>
                 <div className="flex justify-between mt-1">
-                    <span className="font-game text-xs text-gray-500">Novice</span>
+                    <span className="font-game text-xs text-gray-500">Beginner</span>
                     <span className="font-game text-xs text-gray-500">Pro Coder</span>
                 </div>
             </div>

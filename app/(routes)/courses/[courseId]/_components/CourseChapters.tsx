@@ -11,6 +11,26 @@ type Props = {
 };
 
 const CourseChapters = ({ loading, courseDetail }: Props) => {
+
+  const enableExercise = (
+    chapterIndex: number,
+    exerciseIndex: number,
+    chapterExercisesLength: number
+  ) => {
+    const completed = courseDetail?.completedExercises;
+
+    if (!completed || completed.length === 0) {
+      return chapterIndex === 0 && exerciseIndex === 0;
+    }
+
+    const last = completed[completed.length - 1];
+
+    const currentExerciseNumber = chapterIndex * chapterExercisesLength + exerciseIndex + 1;
+    const lastCompletedExerciseNumber = (last.chapterId - 1) * chapterExercisesLength + last.exerciseId;
+
+    return currentExerciseNumber === lastCompletedExerciseNumber + 2;
+  }
+
   return (
     <div>
       {courseDetail?.chapters?.length == 0 ?
@@ -22,7 +42,7 @@ const CourseChapters = ({ loading, courseDetail }: Props) => {
         :
         <div className="font-game border border-gray-500 rounded-xl p-4 bg-linear-to-br from-slate-900/80 to-slate-900">
           <h2 className="text-3xl text-white mb-4">Course Chapters</h2>
-          
+
           {courseDetail?.chapters?.map((chapter, index) => (
             <Accordion key={index} type="single" collapsible className="mb-3 font-game">
               <AccordionItem value={"item-" + index} className="border border-gray-700 rounded-lg">
@@ -56,21 +76,31 @@ const CourseChapters = ({ loading, courseDetail }: Props) => {
                             </p>
                           </div>
                         </div>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <Button 
-                              variant="outline" 
-                              size="sm"
-                              className="border-gray-600 text-gray-400 hover:bg-gray-800"
-                            >
-                              <Lock className="w-3 h-3 mr-1" />
-                              Locked
-                            </Button>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p className="font-medium">Enroll to unlock this exercise</p>
-                          </TooltipContent>
-                        </Tooltip>
+                        {enableExercise(index, indexExc, chapter?.exercises?.length) ? (
+                          <Button
+                            variant="pixel"
+                            className="w-20"
+                          >
+                            Start
+                          </Button>
+                        ) : (
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="border-gray-600 text-gray-400 hover:bg-gray-800"
+                              >
+                                <Lock className="w-3 h-3 mr-1" />
+                                Locked
+                              </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="font-medium">Enroll to unlock this exercise</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        )}
+
                       </div>
                     ))}
                   </div>

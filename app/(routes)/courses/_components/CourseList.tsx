@@ -22,7 +22,22 @@ export type Course = {
   level: string,
   tags: string | null,
   chapters: Chapter[]
-  userEnrolled?: boolean
+  userEnrolled?: boolean,
+  courseEnrolledInfo?: CourseEnrolledInfo,
+  completedExercises?: CompletedExercise[]
+}
+
+export type CourseEnrolledInfo = {
+  xpEarned: number,
+  enrolledDate: any
+}
+
+export type CompletedExercise = {
+  chapterId: number,
+  exerciseId: number,
+  courseId: number,
+  userId: number,
+  completedDate: any
 }
 
 export type Chapter = {
@@ -190,7 +205,7 @@ const CourseList = () => {
               </div>
 
               {/* CTA Button */}
-              <Button variant="pixel" className="">
+              <Button variant="pixel">
                 Continue Learning
               </Button>
             </div>

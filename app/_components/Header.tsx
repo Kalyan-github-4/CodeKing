@@ -169,7 +169,7 @@ const Header = () => {
         <div className="flex gap-4 items-center">
           <Link href={"/dashboard"}>
             <Button className="font-game text-xl relative group overflow-hidden" variant="pixel">
-              <span className="relative z-10">Dashboard</span>
+              <span className="relative z-10">DASHBOARD</span>
               <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </Button>
           </Link>

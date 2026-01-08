@@ -8,7 +8,7 @@ const CommunityHelpSection = () => {
           Join the Coding Kingdom
         </h2>
         <p className='text-gray-300 text-xl'>
-          Connect with <span className='text-yellow-300'>developers,</span> get unstuck, and grow together.
+          Connect with <span className='text-yellow-300'>developers,</span> get unstuck, and grow together
         </p>
       </div>
 
@@ -17,11 +17,7 @@ const CommunityHelpSection = () => {
         className="w-full py-5 font-game bg-linear-to-r from-yellow-400 to-yellow-500 border-2 border-yellow-500/30 hover:border-yellow-500/50 hover:bg-linear-to-r hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 group/btn"
       >
         <span className="flex items-center justify-center gap-2">
-          <span className="text-yellow-400">👥</span>
-          ENTER COMMUNITY
-          <span className="text-black text-3xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
-            →
-          </span>
+          Enter Community
         </span>
       </Button>
     </div>
